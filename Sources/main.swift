@@ -63,7 +63,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
         window.contentView = root
         window.delegate = self
         window.isReleasedWhenClosed = false
-        window.center()
+        // AppKit persists the frame in this app's preferences across launches.
+        if !window.setFrameUsingName("InstagramDockMainWindow") {
+            window.center()
+        }
+        window.setFrameAutosaveName("InstagramDockMainWindow")
         showWindow()
         home()
     }
@@ -154,7 +158,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
     }
     @objc func diagnostics() {
         var payload = report
-        payload["appVersion"] = "0.4"
+        payload["appVersion"] = "0.5"
         payload["badge"] = detectedBadge
         payload["persistentSession"] = web.configuration.websiteDataStore.isPersistent
         let data = (try? JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys])) ?? Data()
@@ -166,7 +170,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
         alert.addButton(withTitle: "Copy Diagnostics")
         if alert.runModal() == .alertSecondButtonReturn { NSPasteboard.general.clearContents(); NSPasteboard.general.setString(text, forType: .string) }
     }
-    func windowShouldClose(_ sender: NSWindow) -> Bool { sender.orderOut(nil); return false }
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        sender.saveFrame(usingName: "InstagramDockMainWindow")
+        sender.orderOut(nil)
+        return false
+    }
+    func applicationWillTerminate(_ notification: Notification) {
+        window?.saveFrame(usingName: "InstagramDockMainWindow")
+    }
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool { false }
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool { showWindow(); return true }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {

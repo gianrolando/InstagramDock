@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5 — 2026-10-25
+
+- Remember window size and position across launches using AppKit frame autosave.
+- Save the window frame when closing the window or quitting the app.
+- Keep English UI and the restored camera icon.
+
 ## 0.4 (build 5) — 2026-10-25 — Initial public release package
 
 - Explicit app icon filename and Dock icon loading at launch.

@@ -1,10 +1,12 @@
-InstagramDock 0.4 — macOS 13 or later
+InstagramDock 0.5 — macOS 13 or later
 
 1. Drag InstagramDock.app to Applications.
 2. Open the app and sign in to Instagram.
 3. If macOS blocks this download, check System Settings > Privacy & Security >
    Open Anyway after the first attempt, if available and you trust the source.
    This app is ad hoc signed and not notarized. Do not disable Gatekeeper.
+Window size and position are remembered after resizing or moving the window.
+
 4. Closing the window keeps the app running. Click the Dock icon to reopen it.
 5. Command+Q quits the app and stops badge updates.
 6. Command+Shift+D shows or hides the developer panel.

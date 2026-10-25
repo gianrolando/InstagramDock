@@ -1,0 +1,19 @@
+# Build products and local tools
+build/
+dist/
+.swiftpm/
+.build/
+.DS_Store
+._*
+*.xcuserstate
+xcuserdata/
+# Local credentials, signing keys and session data
+.env
+.env.*
+*.p12
+*.p8
+*.mobileprovision
+*.keychain*
+WebKit/
+Cookies/
+*.sqlite*

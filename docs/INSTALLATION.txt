@@ -1,0 +1,18 @@
+InstagramDock 0.4 — macOS 13 or later
+
+1. Drag InstagramDock.app to Applications.
+2. Open the app and sign in to Instagram.
+3. If macOS blocks this download, check System Settings > Privacy & Security >
+   Open Anyway after the first attempt, if available and you trust the source.
+   This app is ad hoc signed and not notarized. Do not disable Gatekeeper.
+4. Closing the window keeps the app running. Click the Dock icon to reopen it.
+5. Command+Q quits the app and stops badge updates.
+6. Command+Shift+D shows or hides the developer panel.
+   You can also choose View > Show Developer Panel.
+
+The badge is inferred from the loaded page. + means a lower bound.
+After reading the last message, allow roughly 10 seconds for the badge to clear.
+No macOS notification banners are included. Instagram may change its interface.
+Universal Apple Silicon/Intel package. Intel compiled, not tested on hardware.
+App-owned UI is English; Instagram and system dialogs use their own settings.
+Not affiliated with Instagram or Meta. MIT license included.

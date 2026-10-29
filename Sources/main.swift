@@ -27,6 +27,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
         if let path = Bundle.main.path(forResource: "detector", ofType: "js"), let js = try? String(contentsOfFile: path, encoding: .utf8) {
             config.userContentController.addUserScript(WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
         }
+        if let path = Bundle.main.path(forResource: "layout", ofType: "js"),
+           let js = try? String(contentsOfFile: path, encoding: .utf8) {
+            config.userContentController.addUserScript(WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: true))
+        }
         web = WKWebView(frame: .zero, configuration: config)
         web.navigationDelegate = self
         web.uiDelegate = self
@@ -158,7 +162,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
     }
     @objc func diagnostics() {
         var payload = report
-        payload["appVersion"] = "0.5"
+        payload["appVersion"] = "0.6"
         payload["badge"] = detectedBadge
         payload["persistentSession"] = web.configuration.websiteDataStore.isPersistent
         let data = (try? JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys])) ?? Data()

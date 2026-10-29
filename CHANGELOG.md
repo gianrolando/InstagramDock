@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6 — 2026-10-29
+
+- Constrain the Home feed tab strip when it overlaps the right-hand account card.
+- Recalculate on page updates and resize; restore original inline styles on other pages or without a sidebar.
+- Match English/Italian labels and page geometry instead of generated CSS classes.
+- Add 11 synthetic layout regressions alongside the 20 badge tests.
+
 ## 0.5 — 2026-10-25
 
 - Remember window size and position across launches using AppKit frame autosave.

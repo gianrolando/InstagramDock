@@ -1,4 +1,4 @@
-InstagramDock 0.5 — macOS 13 or later
+InstagramDock 0.6 — macOS 13 or later
 
 1. Drag InstagramDock.app to Applications.
 2. Open the app and sign in to Instagram.
@@ -18,3 +18,6 @@ No macOS notification banners are included. Instagram may change its interface.
 Universal Apple Silicon/Intel package. Intel compiled, not tested on hardware.
 App-owned UI is English; Instagram and system dialogs use their own settings.
 Not affiliated with Instagram or Meta. MIT license included.
+
+Home layout: the app limits the feed tab strip when it overlaps the right-hand
+profile column. This workaround recognizes English and Italian page labels.

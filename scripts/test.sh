@@ -5,3 +5,5 @@ cd "$ROOT"
 mkdir -p build/module-cache
 xcrun swiftc -swift-version 5 -module-cache-path "$ROOT/build/module-cache" Tests/test_detector.swift -o build/test-detector -framework JavaScriptCore
 build/test-detector Resources/detector.js
+xcrun swiftc -swift-version 5 -module-cache-path "$ROOT/build/module-cache" Tests/test_layout.swift -o build/test-layout -framework JavaScriptCore
+build/test-layout Resources/layout.js

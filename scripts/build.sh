@@ -7,7 +7,7 @@ case "$ARCH" in arm64|x86_64|universal) ;; *) echo 'Usage: bash scripts/build.sh
 APP="$ROOT/build/InstagramDock.app"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$ROOT/build/module-cache"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
-cp Resources/detector.js "$APP/Contents/Resources/"
+cp Resources/detector.js Resources/layout.js "$APP/Contents/Resources/"
 # Generate the camera icon used in the original private app.
 xcrun swiftc -swift-version 5 -module-cache-path "$ROOT/build/module-cache" scripts/icon.swift -o build/make-icon -framework Cocoa
 mkdir -p build/AppIcon.iconset

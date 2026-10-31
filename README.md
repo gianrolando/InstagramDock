@@ -2,7 +2,7 @@
 
 A small native macOS app that opens Instagram and displays an unread-message badge in the Dock.
 
-[Download macOS app](../../raw/refs/heads/main/downloads/InstagramDock-0.7-macOS-universal.zip) · [Installation](#installation) · [Build](#build-from-source) · [Privacy](PRIVACY.md)
+[Download macOS app](../../raw/refs/heads/main/downloads/InstagramDock-0.7-macOS-universal.zip) · [Release kit and publishing guide](../../raw/refs/heads/main/downloads/InstagramDock-0.7-Release-Kit.zip) · [Installation](#installation) · [Build](#build-from-source) · [Privacy](PRIVACY.md)
 
 Built with Swift, AppKit and WKWebView. No Electron, Python, Node.js or third-party libraries.
 Independent community project, not affiliated with, endorsed by or sponsored by Instagram or Meta. Instagram and Meta names belong to their respective owners. The MIT license covers this project's code and original assets, not Instagram's website, content or trademarks.

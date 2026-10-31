@@ -8,6 +8,7 @@ APP="$ROOT/build/InstagramDock.app"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources" "$ROOT/build/module-cache"
 cp Resources/Info.plist "$APP/Contents/Info.plist"
 cp Resources/detector.js Resources/layout.js "$APP/Contents/Resources/"
+cp LICENSE "$APP/Contents/Resources/LICENSE.txt"
 # Generate the camera icon used in the original private app.
 xcrun swiftc -swift-version 5 -module-cache-path "$ROOT/build/module-cache" scripts/icon.swift -o build/make-icon -framework Cocoa
 mkdir -p build/AppIcon.iconset
@@ -21,7 +22,7 @@ if ! iconutil -c icns build/AppIcon.iconset -o "$APP/Contents/Resources/AppIcon.
   build/make-icon --pack build/AppIcon.iconset "$APP/Contents/Resources/AppIcon.icns"
 fi
 compile() {
-  xcrun swiftc -swift-version 5 -target "$1-apple-macosx13.0" -module-cache-path "$ROOT/build/module-cache" Sources/main.swift -o "build/InstagramDock-$1" -framework Cocoa -framework WebKit
+  xcrun swiftc -swift-version 5 -target "$1-apple-macosx13.0" -module-cache-path "$ROOT/build/module-cache" Sources/main.swift Sources/AboutWindowController.swift -o "build/InstagramDock-$1" -framework Cocoa -framework WebKit
 }
 if [ "$ARCH" = universal ]; then
   compile arm64

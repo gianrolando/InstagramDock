@@ -13,6 +13,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
     var report: [String: Any] = ["state": "starting"]
     var detectedBadge = ""
     var testing = false
+    private var aboutController: AboutWindowController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Set the Dock icon explicitly as well as declaring it in Info.plist.
@@ -79,6 +80,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
         let menu = NSMenu()
         let item = NSMenuItem()
         let appMenu = NSMenu()
+        appMenu.addItem(withTitle: "About InstagramDock", action: #selector(showAbout), keyEquivalent: "").target = self
+        appMenu.addItem(.separator())
         appMenu.addItem(withTitle: "Show InstagramDock", action: #selector(showWindow), keyEquivalent: "0").target = self
         appMenu.addItem(.separator())
         appMenu.addItem(withTitle: "Quit InstagramDock", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
@@ -105,6 +108,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
         viewItem.submenu = viewMenu
         menu.addItem(viewItem)
         NSApp.mainMenu = menu
+    }
+    @objc func showAbout() {
+        if aboutController == nil { aboutController = AboutWindowController() }
+        aboutController?.showWindow(nil)
+        aboutController?.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
     @objc func toggleDeveloperPanel() {
         developerPanelVisible.toggle()
@@ -162,7 +171,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, WKNa
     }
     @objc func diagnostics() {
         var payload = report
-        payload["appVersion"] = "0.6"
+        payload["appVersion"] = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "Unknown"
         payload["badge"] = detectedBadge
         payload["persistentSession"] = web.configuration.websiteDataStore.isPersistent
         let data = (try? JSONSerialization.data(withJSONObject: payload, options: [.prettyPrinted, .sortedKeys])) ?? Data()

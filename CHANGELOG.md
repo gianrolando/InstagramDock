@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7 — 2026-10-31
+
+- Add About InstagramDock as the first item in the application menu.
+- Show the original app icon, version, approved description, copyright and independent-project notice.
+- Add GitHub and License buttons; the full MIT license is bundled for offline reading.
+- Read the version from bundle metadata in About and diagnostics.
+
 ## 0.6 — 2026-10-29
 
 - Constrain the Home feed tab strip when it overlaps the right-hand account card.

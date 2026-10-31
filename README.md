@@ -2,7 +2,7 @@
 
 A small native macOS app that opens Instagram and displays an unread-message badge in the Dock.
 
-[Download macOS app](../../raw/refs/heads/main/downloads/InstagramDock-0.6-macOS-universal.zip) · [Installation](#installation) · [Build](#build-from-source) · [Privacy](PRIVACY.md)
+[Download macOS app](../../raw/refs/heads/main/downloads/InstagramDock-0.7-macOS-universal.zip) · [Installation](#installation) · [Build](#build-from-source) · [Privacy](PRIVACY.md)
 
 Built with Swift, AppKit and WKWebView. No Electron, Python, Node.js or third-party libraries.
 Independent community project, not affiliated with, endorsed by or sponsored by Instagram or Meta. Instagram and Meta names belong to their respective owners. The MIT license covers this project's code and original assets, not Instagram's website, content or trademarks.
@@ -16,12 +16,13 @@ Independent community project, not affiliated with, endorsed by or sponsored by 
 - Keeps the Home feed tab strip clear of the right-hand profile column when it overlaps.
 - Remembers window size and position across app launches.
 - Native Dock badge test and diagnostic report.
+- **InstagramDock → About InstagramDock**: app icon, version, copyright, GitHub link and bundled MIT license.
 
 ## Installation
 
-Requires **macOS 13 or later** and an Internet connection. Download the [ready-to-use universal app ZIP](../../raw/refs/heads/main/downloads/InstagramDock-0.6-macOS-universal.zip), extract it, and drag **InstagramDock.app** into Applications. The ZIP includes an English README and the MIT license. A [SHA-256 checksum](downloads/InstagramDock-0.6-macOS-universal.zip.sha256) is provided alongside it. Future versions may also be published under **Releases**. Open it and sign in on Instagram's own page.
+Requires **macOS 13 or later** and an Internet connection. Download the [ready-to-use universal app ZIP](../../raw/refs/heads/main/downloads/InstagramDock-0.7-macOS-universal.zip), extract it, and drag **InstagramDock.app** into Applications. The ZIP includes an English README and the MIT license. A [SHA-256 checksum](downloads/InstagramDock-0.7-macOS-universal.zip.sha256) is provided alongside it. Future versions may also be published under **Releases**. Open it and sign in on Instagram's own page.
 
-The current package is **0.6**, universal for Apple Silicon and Intel. Intel compilation is checked; interactive use has only been confirmed on Apple Silicon. The app is ad hoc signed, **not Developer ID signed or notarized**. macOS may block downloaded builds: after attempting to open it, use **System Settings → Privacy & Security → Open Anyway** if offered and you trust the source. Managed Macs may disallow this. Building from source is another option. Do not disable Gatekeeper globally.
+The current package is **0.7**, universal for Apple Silicon and Intel. Intel compilation is checked; interactive use has only been confirmed on Apple Silicon. The app is ad hoc signed, **not Developer ID signed or notarized**. macOS may block downloaded builds: after attempting to open it, use **System Settings → Privacy & Security → Open Anyway** if offered and you trust the source. Managed Macs may disallow this. Building from source is another option. Do not disable Gatekeeper globally.
 
 All app-owned menus, status messages, diagnostics and documentation are in English. Instagram content follows your Instagram language settings; macOS-owned dialogs follow system settings. The detector still recognizes English and Italian website labels.
 

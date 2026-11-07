@@ -1,4 +1,4 @@
-InstagramDock 0.7 — macOS 13 or later
+InstagramDock 0.7.1 — macOS 13 or later
 
 1. Drag InstagramDock.app to Applications.
 2. Open the app and sign in to Instagram.
@@ -24,3 +24,6 @@ profile column. This workaround recognizes English and Italian page labels.
 
 Credits: choose InstagramDock > About InstagramDock. The window includes the
 app icon, version, copyright, and GitHub/License buttons. License opens offline.
+
+Photo uploads: use Instagram's post or profile photo controls to open the macOS
+file picker. Select the files you want to use, then continue in Instagram.

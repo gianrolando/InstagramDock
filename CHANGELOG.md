@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.7.1 — 2026-11-07
+
+- Open the macOS file picker when Instagram requests a local file for a post or profile photo.
+- Allow multiple files when requested by the page.
+
 ## 0.7 — 2026-10-31
 
 - Add About InstagramDock as the first item in the application menu.
